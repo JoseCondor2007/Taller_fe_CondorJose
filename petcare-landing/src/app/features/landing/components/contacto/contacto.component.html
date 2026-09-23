@@ -1,0 +1,78 @@
+<section id="contacto" class="contacto">
+  <div class="contacto__container">
+
+    <div class="contacto__header">
+      <span class="contacto__tag">Contáctanos</span>
+      <h2 class="contacto__title">¿Listo para cuidar mejor a tu mascota?</h2>
+      <p class="contacto__subtitle">
+        Agenda una cita hoy y recibe 20% de descuento en tu primera consulta.
+      </p>
+    </div>
+
+    <div class="contacto__grid">
+
+      <!-- Columna izquierda: información -->
+      <div class="contacto__info">
+
+        <div class="contacto__item">
+          <span class="contacto__icon">📍</span>
+          <div>
+            <h4>Dirección</h4>
+            <p>{{ contacto.direccion }}</p>
+            <small>{{ contacto.referencia }}</small>
+          </div>
+        </div>
+
+        <div class="contacto__item">
+          <span class="contacto__icon">📞</span>
+          <div>
+            <h4>Teléfono</h4>
+            <p>{{ contacto.telefono }}</p>
+          </div>
+        </div>
+
+        <div class="contacto__item">
+          <span class="contacto__icon">📧</span>
+          <div>
+            <h4>Correo</h4>
+            <p>{{ contacto.email }}</p>
+          </div>
+        </div>
+
+        <div class="contacto__item">
+          <span class="contacto__icon">🕐</span>
+          <div>
+            <h4>Horario de atención</h4>
+            <ul class="contacto__horarios">
+              <li *ngFor="let h of horarios">
+                <span class="contacto__dia">{{ h.dia }}</span>
+                <span class="contacto__hora">{{ h.hora }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna derecha: CTA -->
+      <div class="contacto__cta-box">
+        <h3>Agenda tu cita ahora</h3>
+        <p>Atención inmediata por WhatsApp o llamada directa.</p>
+
+        <div class="contacto__actions">
+          <a [href]="'tel:' + contacto.telefono.replace(' ', '')" class="btn btn--primary">
+            📞 Llamar Ahora
+          </a>
+          <a [href]="'https://wa.me/' + contacto.whatsapp.replace('+', '')" class="btn btn--secondary">
+            💬 WhatsApp
+          </a>
+        </div>
+
+        <div class="contacto__badge">
+          ⚡ Urgencias 24/7 disponibles
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

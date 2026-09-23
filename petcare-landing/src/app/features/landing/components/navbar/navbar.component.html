@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="navbar__container">
+    <a (click)="scrollTo('inicio')" class="navbar__brand" style="cursor: pointer;">
+      <img src="assets/img/logo-petcare.png" alt="PetCare" class="navbar__logo">
+      <span class="navbar__brand-text">PetCare</span>
+    </a>
+
+    <button class="navbar__toggle" (click)="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="navbar__menu" [class.navbar__menu--open]="isMenuOpen">
+      <li *ngFor="let item of menuItems">
+        <a (click)="scrollTo(item.fragment)"
+           class="navbar__link"
+           style="cursor: pointer;">
+          {{ item.label }}
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contacto')"
+           class="navbar__cta"
+           style="cursor: pointer;">
+          Agendar Cita
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<section id="beneficios" class="beneficios">
+  <div class="beneficios__container">
+    <span class="beneficios__tag">¿Por qué elegirnos?</span>
+    <h2 class="beneficios__title">Beneficios exclusivos para tu mascota</h2>
+
+    <div class="beneficios__grid">
+      <article class="beneficio-card" *ngFor="let b of beneficios; let i = index">
+        <div class="beneficio-card__head">
+          <span class="beneficio-card__icon">{{ b.icono }}</span>
+          <span class="beneficio-card__num">0{{ i + 1 }}</span>
+        </div>
+        <h3>{{ b.titulo }}</h3>
+        <p>{{ b.descripcion }}</p>
+      </article>
+    </div>
+  </div>
+</section>

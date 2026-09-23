@@ -1,0 +1,12 @@
+<section class="galeria">
+  <div class="galeria__container">
+    <span class="galeria__tag">Nuestros Pacientes</span>
+    <h2 class="galeria__title">Momentos PetCare 🐾</h2>
+
+    <div class="galeria__grid">
+      <figure class="galeria__item" *ngFor="let img of galeria">
+        <img [src]="img.url" [alt]="img.alt" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>

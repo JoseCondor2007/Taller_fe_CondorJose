@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #1a2e35;
+  line-height: 1.6;
+  background: #fff;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* Compensa el navbar fijo al hacer scroll a una sección */
+section[id] {
+  scroll-margin-top: 100px;
+}

@@ -1,0 +1,48 @@
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e0f2f1;
+  z-index: 1000; padding: 0.75rem 0;
+}
+.navbar__container {
+  max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.navbar__brand { display: flex; align-items: center; gap: 0.6rem; }
+.navbar__logo { width: 40px; height: 40px; object-fit: contain; }
+.navbar__brand-text { color: #00897b; font-weight: 800; font-size: 1.2rem; }
+.navbar__menu {
+  display: flex; align-items: center; gap: 1.75rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.navbar__link {
+  color: #37474f; font-weight: 500; font-size: 0.95rem;
+  transition: color 0.25s;
+}
+.navbar__link:hover { color: #00bcd4; }
+.navbar__cta {
+  background: #00bcd4; color: #fff; padding: 0.6rem 1.3rem;
+  border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+  transition: all 0.3s; box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+}
+.navbar__cta:hover { background: #00897b; transform: translateY(-2px); }
+.navbar__toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+}
+.navbar__toggle span {
+  width: 26px; height: 3px; background: #00897b; border-radius: 2px;
+}
+@media (max-width: 900px) {
+  .navbar__toggle { display: flex; }
+  .navbar__menu {
+    position: absolute; top: 100%; left: 0; width: 100%;
+    flex-direction: column; background: #fff; padding: 1.5rem;
+    gap: 1rem; transform: translateY(-150%); opacity: 0;
+    pointer-events: none; transition: all 0.35s ease;
+  }
+  .navbar__menu--open {
+    transform: translateY(0); opacity: 1; pointer-events: auto;
+  }
+}
